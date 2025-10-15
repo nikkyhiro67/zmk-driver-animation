@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "animation.h": "c",
+    "color.h": "c",
+    "animation_trigger.h": "c"
+  }
+}
