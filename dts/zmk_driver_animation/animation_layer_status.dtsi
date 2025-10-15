@@ -1,4 +1,4 @@
-/ {
+ / {
     behaviors {
         animls: animls {
             compatible = "zmk,behavior-animation-layer-status";
@@ -13,10 +13,10 @@
         // デフォルトカラー（青）
         default-color = <0x0000FF>;
 
-        // ピクセル定義
+        // ピクセル番号
         pixels = <0 1 2 3>;
 
-        // 各レイヤーに対応するカラー定義（32bit RGB値）
+        // 各レイヤー色を RGB整数で指定（0xRRGGBB）
         colors = <
             0x00B8E6   // Layer 0: Cyan
             0xFF0000   // Layer 1: Red
