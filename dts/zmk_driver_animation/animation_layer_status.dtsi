@@ -1,4 +1,4 @@
- / {
+/ {
     behaviors {
         animls: animls {
             compatible = "zmk,behavior-animation-layer-status";
@@ -9,8 +9,19 @@
     animation_layer_status: animation_layer_status {
         compatible = "zmk,animation-layer-status";
         status = "okay";
-        default-color = <0x0000FF>; // blue
-        // pixels = <...>;
-        // colors = <...>;
+
+        // デフォルトカラー（青）
+        default-color = <0x00 0x00 0xFF>;
+
+        // ピクセル定義（4個のLED）
+        pixels = <0 1 2 3>;
+
+        // 各レイヤーに対応するカラー定義（RGB値）
+        colors = <
+            0x00 0xB8 0xE6   // Layer 0: HSL(193,100,47) → #00B8E6 (Cyan)
+            0xFF 0x00 0x00   // Layer 1: HSL(0,100,40) → #FF0000 (Red)
+            0xFF 0xFF 0xFF   // Layer 2: HSL(0,100,100) → #FFFFFF (White)
+            0xFF 0x80 0x00   // Layer 3: HSL(29,88,51) → #FF8000 (Orange)
+        >;
     };
 };
