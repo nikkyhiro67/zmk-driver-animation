@@ -9,7 +9,7 @@
  * that can be cast to zmk_color_hsl.
  */
 #define HSL(h, s, l) (((h & 0xFF) << 16) | ((s & 0xFF) << 8) | ((l) & 0xFF))
-
+#define HSL_RGB(h, s, l) HSL(h, s, l)
 /**
  * Animation control commands
  */
