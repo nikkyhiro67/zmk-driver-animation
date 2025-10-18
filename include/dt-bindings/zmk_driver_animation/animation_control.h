@@ -8,8 +8,11 @@
  * Maps HSL color settings into a single uint32_t value
  * that can be cast to zmk_color_hsl.
  */
-#define HSL(h, s, l) (((h & 0xFF) << 16) | ((s & 0xFF) << 8) | ((l) & 0xFF))
-#define HSL_RGB(h, s, l) HSL(h, s, l)
+#ifdef CONFIG_BIG_ENDIAN
+#define HSL(h, s, l) ((h << 16) + (s << 8) + l)
+#else
+#define HSL(h, s, l) (h + (s << 16) + (l << 24))
+#endif
 /**
  * Animation control commands
  */
